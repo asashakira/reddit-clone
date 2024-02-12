@@ -1,0 +1,33 @@
+.root {
+  padding: 20px 24px;
+}
+
+.postLink {
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  display: flex;
+
+  & .votes {
+    margin-right: 8px;
+    padding: 8px;
+    border-right: 1px solid #e0e0e0;
+  }
+
+  & .main {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+
+    & .title {
+      margin-right: 8px;
+    }
+
+    & .author {
+    }
+  }
+
+  & .comments {
+    padding: 8px;
+  }
+}
