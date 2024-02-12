@@ -1,12 +1,13 @@
 import React from 'react'
 
-import {usePosts} from '@src/api/getPosts'
 import {MainLayout} from '@src/components/MainLayout'
-import type {Post} from '@src/types'
 
-import styles from './Dashboard.css'
+import {usePosts} from '../../api/getPosts'
+import type {Post} from '../../types'
 
-export const Dashboard: React.FC = () => {
+import styles from './Posts.css'
+
+export const Posts = () => {
   const {data: posts, isLoading} = usePosts()
 
   if (isLoading) {
@@ -15,9 +16,7 @@ export const Dashboard: React.FC = () => {
 
   return (
     <MainLayout className={styles.root}>
-      {posts?.map((post) => (
-        <PostLink key={post.id} post={post} />
-      ))}
+      {posts?.map((post) => <PostLink key={post.id} post={post} />)}
     </MainLayout>
   )
 }

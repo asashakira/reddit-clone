@@ -1,8 +1,9 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
 
-import {usePost} from '@src/api/getPosts'
 import {MainLayout} from '@src/components/MainLayout'
+
+import {usePost} from '../../api/getPosts'
 
 export const Post: React.FC = () => {
   const {postId} = useParams()

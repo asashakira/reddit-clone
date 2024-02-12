@@ -1,6 +1,6 @@
 import {useQuery} from '@tanstack/react-query'
 
-import type {Post} from '@src/types'
+import type {Post} from '../types'
 
 const posts = [
   {

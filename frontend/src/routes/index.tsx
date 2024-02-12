@@ -1,14 +1,15 @@
-import React from 'react'
-import {Route, Routes} from 'react-router-dom'
+import {useRoutes} from 'react-router-dom'
 
-import {Dashboard} from '@src/pages/Dashboard'
-import {Post} from '@src/pages/Post'
+import {protectedRoutes} from './protected'
+import {publicRoutes} from './public'
 
 export const AppRoutes = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/post/:postId" element={<Post />} />
-    </Routes>
-  )
+  const commonRoutes = [{}]
+
+  // const routes = auth.user ? protectedRoutes : publicRoutes
+  const routes = protectedRoutes
+
+  const element = useRoutes([...routes, ...commonRoutes])
+
+  return <>{element}</>
 }
